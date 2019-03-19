@@ -6,19 +6,23 @@ Digital FingerPrinter
   * Java 1.8
 
 
-## How to start?
+## How to start
 
 In order to start the seed use:
 
 ```bash
 $ git clone https://github.com/LuisColmenarez/digital
-
 $ cd digital
-
 $ mvn clean install
-
 $ mvn spring-boot:run
 ```
+
+## Build an executable JAR
+```bash
+$ mvn clean package
+$ java -jar target/digital-{version}.jar 
+```
+
 
 Now open your browser at http://localhost:8080
 
