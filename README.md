@@ -1,6 +1,11 @@
 # digital
 Digital FingerPrinter
 
+## Requeriments
+  * [Maven](https://maven.apache.org/install.html)
+  * Java 1.8
+
+
 ## How to start?
 
 In order to start the seed use:
