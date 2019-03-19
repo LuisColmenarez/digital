@@ -20,4 +20,9 @@
 *.rar
 
 #
-/target
+/.project
+/.classpath
+/.settings/
+/build/
+/target/
+/bin/
