@@ -1,32 +1,58 @@
 package com.server.digital.controllers;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Map;
 
-import com.server.digital.models.FingerPrint;
+import com.server.digital.services.FingerPrintService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 /*
- * @author lcolmenarez
+ * @author luis.colmenarez
 */
 @RestController
 @RequestMapping("/")
 public class DigitalController {
 
-    private static final String template = "Esto es un %s!";
-    private final AtomicLong counter = new AtomicLong();
+    @Autowired
+    private FingerPrintService service;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView home() {
-        return new ModelAndView("index");
+    @RequestMapping(value="statusServer", method = RequestMethod.GET)
+    public String statusServer() {
+        return service.statusServer();
     }
 
-    @RequestMapping(value = "test", method = RequestMethod.GET)
-    public FingerPrint test(@RequestParam(value = "content", defaultValue = "Test") String name) {
-        return new FingerPrint(counter.incrementAndGet(), String.format(template, name));
+    @RequestMapping(value="numbFingerPrints", method = RequestMethod.GET)
+    public String numbFingerPrints(@RequestParam(value = "fingerPrints") Map<Object, Object> request) {
+        return service.numbFingerPrints(request);
     }
+
+    @RequestMapping(value="sendFingerPrint", method = RequestMethod.POST)
+    public String sendFingerPrint(@RequestParam(value = "fingerPrint") Map<Object, Object> request) {
+        return service.sendFingerPrint(request);
+    }
+
+    @RequestMapping(value="statusReader", method = RequestMethod.GET)
+    public String statusReader() {
+        return service.statusReader();
+    }
+
+    @RequestMapping(value="waitProcess", method = RequestMethod.GET)
+    public String waitProcess() {
+        return service.waitProcess();
+    }
+
+    @RequestMapping(value="startEnrollment", method = RequestMethod.GET)
+    public String startEnrollment() {
+        return service.startEnrollment();
+    }
+
+    @RequestMapping(value="testWait", method = RequestMethod.GET)
+    public String testWait(@RequestParam(value = "seconds") Integer seconds) throws InterruptedException {
+        return service.testWait(seconds);
+    }
+
 }

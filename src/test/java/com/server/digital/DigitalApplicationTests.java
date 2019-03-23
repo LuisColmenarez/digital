@@ -11,6 +11,6 @@ public class DigitalApplicationTests {
 
 	@Test
 	public void contextLoads() {
+	
 	}
-
 }

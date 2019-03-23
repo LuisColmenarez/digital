@@ -24,7 +24,13 @@ $ java -jar target/digital-{version}.jar
 ```
 
 
-Now open your browser at http://localhost:8080
+Now open your browser at:
+
+  * http://localhost:8080
+  * http://localhost:8080/statusServer
+  * http://localhost:8080/statusReader
+  * ...
+  * http://localhost:8080/testWait?seconds={number of seconds}
 
 ## Contributors
 [<img alt="luisColmenarez" src="https://avatars0.githubusercontent.com/u/16671391?s=400&v=4" width="117">](https://github.com/LuisColmenarez)
