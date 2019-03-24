@@ -8,9 +8,9 @@ import java.util.Map;
 public interface FingerPrintService {
     String statusServer();
 
-    String numbFingerPrints(Map<Object, Object> request);
+    String numbFingerPrints(Map<String, String> request);
 
-    String sendFingerPrint(Map<Object, Object> request);
+    String sendFingerPrint(Map<String, String> request);
 
     String statusReader();
 

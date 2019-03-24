@@ -26,12 +26,12 @@ public class DigitalController {
     }
 
     @RequestMapping(value="numbFingerPrints", method = RequestMethod.GET)
-    public String numbFingerPrints(@RequestParam(value = "fingerPrints") Map<Object, Object> request) {
+    public String numbFingerPrints(@RequestParam Map<String, String> request) {
         return service.numbFingerPrints(request);
     }
 
     @RequestMapping(value="sendFingerPrint", method = RequestMethod.POST)
-    public String sendFingerPrint(@RequestParam(value = "fingerPrint") Map<Object, Object> request) {
+    public String sendFingerPrint(@RequestParam Map<String, String> request) {
         return service.sendFingerPrint(request);
     }
 

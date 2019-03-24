@@ -11,18 +11,19 @@
 .mtj.tmp/
 
 # Package files
-*.jar
 *.war
 *.nar
 *.ear
 *.zip
 *.tar.gz
 *.rar
+*.factorypath
 
 #
 /.project
 /.classpath
 /.settings/
+/.vscode/
 /build/
 /target/
 /bin/
